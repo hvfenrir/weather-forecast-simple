@@ -1,28 +1,51 @@
-import { Spin } from "antd";
-import Search from "antd/lib/input/Search";
-import { map } from "lodash-es";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Col, Collapse, Divider, Row, Spin } from "antd";
+import Search from "antd/lib/input/Search";
+import { isNil, map } from "lodash-es";
 
-import { fetchDataStart } from './slice';
+import { getDaysOfWeek } from "utils/day";
+
+import Weather from "./components/weather";
+import { fetchDataStart, fetchWeatherStart } from './slice';
+
+const { Panel } = Collapse;
 
 const WeatherForeCast = () => {
+  // State
   const [coordinate, setCoordinate] = useState();
+
+  // Store
   const dispatch = useDispatch();
-  const weathers = useSelector(state => state.weatherForeCast.weathers);
+  const locations = useSelector(state => state.weatherForeCast.locations);
   const loading = useSelector(state => state.weatherForeCast.loading);
+  const weather = useSelector(state => state.weatherForeCast.weather);
+  const loadingWeather = useSelector(state => state.weatherForeCast.loadingWeather);
 
-  navigator.geolocation.getCurrentPosition(position => {
-    const { coords: { latitude, longitude }} = position;
+  // Gets
+  const dayOfWeekFromToday = useMemo(() => getDaysOfWeek(6), []);
 
-    setCoordinate(`${latitude}, ${longitude}`);
-  });
-
+  // Handlers
   const onSearch = useCallback(value => {
     dispatch(fetchDataStart({
       query: value
     }));
   }, [dispatch]);
+
+  const onChangeCollapse = useCallback(value => {
+    if (isNil(value)) return;
+    if (!weather[value]) dispatch(fetchWeatherStart(value));
+  }, [dispatch, weather]);
+
+  // Side Effects
+  // Asking permission for location
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(position => {
+      const { coords: { latitude, longitude }} = position;
+  
+      setCoordinate(`${latitude}, ${longitude}`);
+    });
+  }, []);
 
   useEffect(() => {
     coordinate && dispatch(fetchDataStart({
@@ -30,24 +53,27 @@ const WeatherForeCast = () => {
     }));
   }, [dispatch, coordinate]);
 
+  const locationsPanel = useMemo(() => map(locations, location => (
+    <Panel header={location.title} key={location.woeid}>
+      <Spin spinning={loadingWeather}>
+        <Weather weather={weather[location.woeid]} dayOfWeekFromToday={dayOfWeekFromToday}/>
+      </Spin>
+    </Panel>
+    )
+  ), [locations, weather, dayOfWeekFromToday, loadingWeather]);
+
   return (
     <Spin spinning={loading}>
-      <h2>Weather Forecast</h2>
-      <div>Search: </div>
-      <Search placeholder="input search text" onSearch={onSearch} style={{ width: 200 }} />
-      <div className='result'>
-        { map(weathers, w => (
-          <div>
-            <p>{w.title}</p>
-            <p>{w.location_type}</p>
-            <p>{w.woeid}</p>
-            <p>{w.latt_long}</p>
-            <br/>
-            <br/>
-          </div>
-          )
-        )}
-      </div>
+      <Row>
+        <Col span={18} offset={3}>
+          <h1 style={{ color: 'white' }}>Weather Forecast</h1>
+          <Search placeholder="Search City..." onSearch={onSearch} style={{ width: '300px' }} />
+          <Divider dashed />
+          <Collapse accordion onChange={onChangeCollapse}>
+            {locationsPanel}
+          </Collapse>
+        </Col>
+      </Row>
     </Spin>
   );
 };
