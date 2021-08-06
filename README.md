@@ -1,6 +1,34 @@
-# Weather Forecast Simple
+# Weather Forecast Simple 🌦
+
+![Preview](./docs/app.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Introduction
+Weather Forecast App is the app for visualizing location weather data by using Metaweather API.
+
+## Features
+ - Detect location
+ - Search location
+ - List locations
+ - Details location weather in next 5 days
+ - Select weather day to see detail information
+ - Avoid duplicate call for weather detail
+ - Reponsive UI
+
+## Frontend Stacks
+ - React
+ - React Hooks
+ - Redux Toolkit
+ - Redux Saga
+ - Jest
+ - React Testing Library
+ - Ant Design
+ - Dayjs
+ - Eslint
+ - Lodash
+ - Geolocation API
+ - Babel
 
 ## Before Start
   - Enable CORS proxy server for using Metaweather API by go to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and click on their button for the temporary proxy server. Rate limit is 50 requests/hour
@@ -31,26 +59,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-## Features
- - Search location
- - List locations
- - Details location weather in next 5 days
- - Select weather day to see detail information
- - Avoid duplicate call for weather detail
- - Reponsive UI
-
-## Frontend Stacks
- - React
- - React Hooks
- - Redux Toolkit
- - Redux Saga
- - Jest
- - React Testing Library
- - Ant Design
- - Dayjs
- - Eslint
- - Babel
 
 ## Learn More
 
