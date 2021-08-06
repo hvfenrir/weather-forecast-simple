@@ -10,7 +10,12 @@
 	color: #ffffff;
   height: 400px;
 	margin: 24px 16px;
-  display: flex;
+	display: flex;
+	
+	@media (max-width: 992px) {
+		flex-direction: column;
+		height: auto;
+	}
 }
 
 .weather-side {
@@ -29,6 +34,10 @@
 	-webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
 	        transform: translateZ(0) scale(1.02) perspective(1000px);
 	flex: 1;
+
+	@media (max-width: 992px) {
+		display: none;
+	}
 }
 
 .weather-side:hover {
@@ -101,7 +110,7 @@
 	position: relative;
 	height: 100%;
   padding-top: 25px;
-  flex: 2;
+	flex: 2;
 }
 
 .today-info {
@@ -141,7 +150,11 @@
 	transition: 200ms ease;
 	border-radius: 10px;
 	width: 33.333%;
-  display: inline-block;
+	display: inline-block;
+	
+	@media (max-width: 992px) {
+		width: 100%;
+	}
 }
 
 .week-list>li:hover {
