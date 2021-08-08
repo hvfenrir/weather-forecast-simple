@@ -27,6 +27,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test --coverage --watchAll",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run --spec \"cypress/integration/weather-forecast/*\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
