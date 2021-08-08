@@ -30,6 +30,30 @@ Weather Forecast App is the app for visualizing location weather data by using M
  - Geolocation API
  - Babel
 
+## Project Structure
+
+Most of the code lives in the `src` folder and looks like this:
+
+```
+src
+|
++-- assets            # assets folder can contain all the static data such as images, fonts, etc.
+|
++-- components        # shared components used across the entire application
+|
++-- config            # all the global configuration, env variables etc. get exported from here and used in the app
+|
++-- container         # feature based modules
+|
++-- hooks             # shared hooks used across the entire application
+|
++-- routes            # routes configuration
+|
++-- store             # configuration redux store, reducer, middlewares redux saga
+|
++-- utils             # shared utility functions
+```
+
 ## Before Start
   - Note that Metaweather Api [https://www.metaweather.com/api/](https://www.metaweather.com/api/) has't been included cors.
   - Created a proxy-server to handle Metaweather Api. By go to folder `proxy-server` and `npm install` then start it by `npm start`
