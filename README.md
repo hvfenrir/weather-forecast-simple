@@ -22,6 +22,7 @@ Weather Forecast App is the app for visualizing location weather data by using M
  - Redux Toolkit
  - Redux Saga
  - Jest
+ - Cypress
  - React Testing Library
  - Ant Design
  - Dayjs
@@ -29,6 +30,11 @@ Weather Forecast App is the app for visualizing location weather data by using M
  - Lodash
  - Geolocation API
  - Babel
+
+## Testing
+ - Unit Tests
+ - Integration Tests
+ - End-to-End Tests
 
 ## Project Structure
 
