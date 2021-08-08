@@ -31,7 +31,8 @@ Weather Forecast App is the app for visualizing location weather data by using M
  - Babel
 
 ## Before Start
-  - Enable CORS proxy server for using Metaweather API by go to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and click on their button for the temporary proxy server. Rate limit is 50 requests/hour
+  - Note that Metaweather Api [https://www.metaweather.com/api/](https://www.metaweather.com/api/) has't been included cors.
+  - Created a proxy-server to handle Metaweather Api. By go to folder `proxy-server` and `npm install` then start it by `npm start`
 
 ## Available Scripts
 
