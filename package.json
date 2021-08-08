@@ -50,6 +50,7 @@
   "devDependencies": {
     "@craco/craco": "6.2.0",
     "craco-less": "1.18.0",
+    "cypress": "^8.2.0",
     "redux-mock-store": "1.5.4"
   }
 }

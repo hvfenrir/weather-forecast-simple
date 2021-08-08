@@ -3,12 +3,12 @@ import { get } from 'lodash-es';
 import { memo, useCallback, useState } from 'react';
 
 import { DAY_OF_WEEK } from 'constant/day';
+import { WEATHER_ICON_URL } from 'containers/weather-forecast/constant';
 
-import './style.less';
 import IconLocation from './components/IconLocation';
 import WeatherInfo from './components/WeatherInfo';
 import Weeks from './components/Weeks';
-import { WEATHER_ICON_URL } from 'containers/weather-forecast/constant';
+import './style.less';
 
 const Weather = memo(({ weather = {}, daysOfWeek }) => {
   const [woeidActive, setWoeidActive] = useState(0);

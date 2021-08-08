@@ -1,0 +1,72 @@
+[
+  {
+    "distance": 17066,
+    "title": "Ho Chi Minh City",
+    "location_type": "City",
+    "woeid": 1252431,
+    "latt_long": "10.759180,106.662498"
+  },
+  {
+    "distance": 759578,
+    "title": "Bangkok",
+    "location_type": "City",
+    "woeid": 1225448,
+    "latt_long": "13.753330,100.504822"
+  },
+  {
+    "distance": 978609,
+    "title": "Phuket",
+    "location_type": "City",
+    "woeid": 1226113,
+    "latt_long": "7.88997,98.388458"
+  },
+  {
+    "distance": 1018543,
+    "title": "Kuala Lumpur",
+    "location_type": "City",
+    "woeid": 1154781,
+    "latt_long": "3.152480,101.717270"
+  },
+  {
+    "distance": 1105594,
+    "title": "Singapore",
+    "location_type": "City",
+    "woeid": 1062617,
+    "latt_long": "1.293780,103.853256"
+  },
+  {
+    "distance": 1142131,
+    "title": "Hà Nội",
+    "location_type": "City",
+    "woeid": 1236594,
+    "latt_long": "21.031950,105.819908"
+  },
+  {
+    "distance": 1329232,
+    "title": "Yangon",
+    "location_type": "City",
+    "woeid": 1015662,
+    "latt_long": "16.803890,96.154694"
+  },
+  {
+    "distance": 1507851,
+    "title": "Hong Kong",
+    "location_type": "City",
+    "woeid": 2165352,
+    "latt_long": "22.411200,114.153999"
+  },
+  {
+    "distance": 1518351,
+    "title": "Shenzhen",
+    "location_type": "City",
+    "woeid": 2161853,
+    "latt_long": "22.546789,114.112556"
+  },
+  {
+    "distance": 1529460,
+    "title": "Guangzhou",
+    "location_type": "City",
+    "woeid": 2161838,
+    "latt_long": "23.107389,113.267616"
+  }
+]
