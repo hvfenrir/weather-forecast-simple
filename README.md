@@ -30,17 +30,42 @@ Weather Forecast App is the app for visualizing location weather data by using M
  - Geolocation API
  - Babel
 
+## Project Structure
+
+Most of the code lives in the `src` folder and looks like this:
+
+```
+src
+|
++-- assets            # assets folder can contain all the static data such as images, fonts, etc.
+|
++-- components        # shared components used across the entire application
+|
++-- config            # all the global configuration, env variables etc. get exported from here and used in the app
+|
++-- container         # feature based modules
+|
++-- hooks             # shared hooks used across the entire application
+|
++-- routes            # routes configuration
+|
++-- store             # configuration redux store, reducer, middlewares redux saga
+|
++-- utils             # shared utility functions
+```
+
 ## Before Start
-  - Enable CORS proxy server for using Metaweather API by go to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/) and click on their button for the temporary proxy server. Rate limit is 50 requests/hour
+  - Note that Metaweather Api [https://www.metaweather.com/api/](https://www.metaweather.com/api/) has't been included cors.
+  - Created a proxy-server to handle Metaweather Api. By go to folder `proxy-server` and `npm install` then start it by `npm start`
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-## `npm install`
+#### `npm install`
 Install Project.
 
-## `npm start`
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -48,11 +73,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-## `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.
 
-## `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
