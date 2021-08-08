@@ -18,7 +18,7 @@ const Weather = memo(({ weather = {}, daysOfWeek }) => {
     min_temp,
     max_temp,
     humidity,
-    weather_state_abbr,
+    weather_state_abbr = 'hr',
     weather_state_name,
     wind_speed,
     applicable_date,

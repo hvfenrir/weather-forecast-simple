@@ -1,5 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import { useGeoLocation } from "hooks/useGeoLocation";
 
 import WeatherForeCastInfo from "./components/weather-forecast-info";
 
@@ -7,7 +9,7 @@ import { fetchDataStart, fetchWeatherStart } from './slice';
 
 const WeatherForeCastContainer = () => {
   // State
-  const [coordinate, setCoordinate] = useState();
+  const coordinate = useGeoLocation();
 
   // Store
   const dispatch = useDispatch();
@@ -25,15 +27,6 @@ const WeatherForeCastContainer = () => {
   }, [dispatch])
 
   // Side Effects
-  // Asking permission for location
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(position => {
-      const { coords: { latitude, longitude }} = position;
-  
-      setCoordinate(`${latitude}, ${longitude}`);
-    });
-  }, []);
-
   // Fetch data when gets coordinate user
   useEffect(() => {
     coordinate && dispatch(fetchDataStart({

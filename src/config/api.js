@@ -1,1 +1,1 @@
-export const baseApiUrl = 'https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api';
+export const baseApiUrl = 'http://localhost:3001/https://www.metaweather.com/api';
